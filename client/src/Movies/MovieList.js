@@ -5,13 +5,14 @@ import MovieCard from "./MovieCard";
 function MovieList({ movies }) {
   return (
     <div className="movie-list">
-      {
-        movies.map(movie => (
+      {movies.map((movie) => {
+        console.log('movie', movie);
+        return (
           <Link key={movie.id} to={`/movies/${movie.id}`}>
             <MovieCard movie={movie} />
           </Link>
-        ))
-      }
+        );
+      })}
     </div>
   );
 }
