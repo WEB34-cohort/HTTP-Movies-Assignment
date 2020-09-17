@@ -38,6 +38,7 @@ function Movie({ addToSavedList, getMovieList }) {
     return <div>Loading movie information...</div>;
   }
 
+  console.log("this movie.js", movie);
   return (
     <div className="save-wrapper">
       <MovieCard movie={movie} />

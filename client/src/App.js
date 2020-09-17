@@ -4,6 +4,7 @@ import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
 import UpdateMovie from './Movies/UpdateMovie';
+import AddMovie from './Movies/AddMovie';
 import axios from 'axios';
 
 const App = () => {
@@ -13,8 +14,9 @@ const App = () => {
   const getMovieList = () => {
     axios
       .get("http://localhost:5100/api/movies")
-      .then(res =>
-        setMovieList(res.data))
+      .then(res => {
+        setMovieList(res.data)
+      })
       .catch(err => console.log(err.response));
   };
 
@@ -40,6 +42,11 @@ const App = () => {
       <Route path='/update-movie/:id'>
         <UpdateMovie movieList={movieList} />
       </Route>
+
+      {/* <Route path='/add-movie'> */}
+        
+      <AddMovie getMovieList={getMovieList} />
+      {/* </Route> */}
     </>
   );
 };

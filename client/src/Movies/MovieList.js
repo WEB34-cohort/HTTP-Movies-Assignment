@@ -6,7 +6,7 @@ function MovieList({ movies }) {
   return (
     <div className="movie-list">
       {movies.map((movie) => {
-        console.log('movie', movie);
+        console.log('movielist.js', movie);
         return (
           <Link key={movie.id} to={`/movies/${movie.id}`}>
             <MovieCard movie={movie} />
